@@ -9,8 +9,6 @@ import {
      MDBBtn
     } from 'mdb-react-ui-kit';
 
-    const maxFiles = 15;
-
 function Form(){
     return(
         <div className="Form">

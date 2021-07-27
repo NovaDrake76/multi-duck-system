@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+// import Pagination from '../components/Pagination';
+// https://www.digitalocean.com/community/tutorials/how-to-build-custom-pagination-with-react-pt
 import {
    MDBContainer,
    MDBCard,

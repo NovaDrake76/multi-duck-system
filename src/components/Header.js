@@ -10,7 +10,9 @@ import {
   MDBNavbarLink,
   MDBNavbarToggler,
   MDBCollapse,
-  MDBNavbarBrand
+  MDBNavbarBrand,
+  MDBBreadcrumb,
+  MDBBreadcrumbItem
 } from 'mdb-react-ui-kit';
 
 const Header = (props) => {
@@ -40,24 +42,23 @@ const Header = (props) => {
             {props.title}
           </MDBNavbarBrand>
           </Link>
+          <nav aria-label='breadcrumb' >
+          <MDBBreadcrumb >
+            <MDBBreadcrumbItem >
+            <Link to="/" style={{color: "white"}}>
+                Home
+                </Link>
+            </MDBBreadcrumbItem>
+            <MDBBreadcrumbItem>
+            <Link to="/post" style={{color: "white"}}>
+                Criar Post
+                </Link>
+            </MDBBreadcrumbItem>
+          </MDBBreadcrumb>
+        </nav>
 
         <MDBCollapse navbar show={showNavRight}>
           <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
-            <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page'>
-                <Link to="/" style={{color: "white"}}>
-                Home
-                </Link>
-              </MDBNavbarLink>
-            </MDBNavbarItem>
-
-            <MDBNavbarItem>
-            <MDBNavbarLink active aria-current='page'>
-                <Link to="/post" style={{color: "white"}}>
-                Criar Post
-                </Link>
-              </MDBNavbarLink>
-            </MDBNavbarItem>
 
             <MDBNavbarItem>
               <MDBNavbarLink href='https://hallycoins.netlify.app' style={{color: "white"}} target="_blank">Hallycoins</MDBNavbarLink>

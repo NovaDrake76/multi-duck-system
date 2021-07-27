@@ -5,6 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: url("https://cdna.artstation.com/p/assets/images/images/025/590/826/large/brody-richardson-final-bw.jpg?1586282763") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  background-color: #36393f;
 }
 
 code {

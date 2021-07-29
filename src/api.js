@@ -1,6 +1,7 @@
-// import axios from "axios";
-// const api = axios.create({
-//     baseURL: "",
-// });
+import axios from "axios";
 
-// export default api;
+const api = axios.create({
+    baseURL: "https://multi-duck-system-api.herokuapp.com/clues",
+});
+
+export default api;

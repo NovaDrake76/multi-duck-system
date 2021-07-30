@@ -9,9 +9,7 @@ function App() {
 
   return (
     <Router>
-    <div className="App"  style={{
-      backgroundColor: '#36393f'
-    }}>
+    <div className="App">
       <Header title="Multi Duck System"/>
       <Switch>
         <Route exact path = "/">

@@ -3,6 +3,7 @@ import axios from "axios";
 import Moment from "moment";
 import "moment/locale/pt-br";
 import _map from "lodash/map";
+import { Link } from "react-router-dom";
 
 import {
   MDBCard,
@@ -33,34 +34,47 @@ export default class javascriptMap extends Component {
   }
   render() {
     const { data } = this.state;
-    const dateFormatted = Moment(data?.data.createAt).format("DDMMYYYY");
-    const dateFromNow = Moment(dateFormatted, "DDMMYYYY").fromNow();
-    console.log(dateFormatted);
+    const dateFormatted = Moment(data?.data.createAt).format(
+      "DD-MM-YYYY HH:mm"
+    );
+    const dateFromNow = Moment(dateFormatted, "DD-MM-YYYY HH:mm").fromNow();
 
     return (
       <>
         {_map(data?.data, (d) => (
-          <MDBCard
-            className="mb-3 text-white"
-            background="dark"
-            style={{ maxWidth: "18rem", minWidth: "40vw" }}
+          <Link
+            to={{
+              pathname: "/resposta",
+              state: {
+                title: d.title,
+                description: d.description,
+                photos: d.photos,
+                date: dateFromNow,
+              },
+            }}
           >
-            <MDBCardBody>
-              <MDBCardTitle>
-                <p>{d.title}</p>{" "}
-              </MDBCardTitle>
-              <MDBCardText>
-                <p>{d.description}</p>
-              </MDBCardText>
-              <MDBCardText>
-                <small className="text-muted">
-                  Postado {dateFromNow} - Hally
-                </small>
-              </MDBCardText>
-            </MDBCardBody>
+            <MDBCard
+              className="mb-3 text-white"
+              background="dark"
+              style={{ maxWidth: "18rem", minWidth: "40vw" }}
+            >
+              <MDBCardBody>
+                <MDBCardTitle>
+                  <p>{d.title}</p>{" "}
+                </MDBCardTitle>
+                <MDBCardText>
+                  <p>{d.description}</p>
+                </MDBCardText>
+                <MDBCardText>
+                  <small className="text-muted">
+                    Postado {dateFromNow} - Hally
+                  </small>
+                </MDBCardText>
+              </MDBCardBody>
 
-            <MDBCardImage position="bottom" src={d.photos} alt="..." />
-          </MDBCard>
+              <MDBCardImage position="bottom" src={d.photos} alt="..." />
+            </MDBCard>
+          </Link>
         ))}
       </>
     );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom'
 import Get from '../components/Get'
 
 // import Pagination from '../components/Pagination';
@@ -14,10 +13,7 @@ function Posts() {
     <div className="Posts" >      
       <MDBContainer className="mt-4 ">
         <div className="d-flex flex-column align-items-center justify-content-center">
-        <Link to = "/resposta">
            <Get />
-        </Link>
-
   </div>
       </MDBContainer>
     </div>

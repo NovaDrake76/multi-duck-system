@@ -16,9 +16,8 @@ function Posts() {
                  {/* {renderPosts()} */}
         <div className="d-flex flex-column align-items-center justify-content-center">
         <Link to = "/resposta">
-        <Get />
-
-  </Link>
+           <Get />
+        </Link>
 
   </div>
       </MDBContainer>

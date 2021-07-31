@@ -34,10 +34,12 @@ export default class javascriptMap extends Component {
   }
   render() {
     const { data } = this.state;
-    const dateFormatted = Moment(data?.data.createAt).format(
-      "DD-MM-YYYY HH:mm"
-    );
-    const dateFromNow = Moment(dateFormatted, "DD-MM-YYYY HH:mm").fromNow();
+
+    console.log(data?.data[1].createdAt);
+    // const dateFormatted = Moment(data?.data[1].createdAt).format(
+    //   "DD-MM-YYYY HH:mm"
+    // );
+    // const dateFromNow = Moment(dateFormatted, "DD-MM-YYYY HH:mm").fromNow();
 
     return (
       <>
@@ -49,7 +51,7 @@ export default class javascriptMap extends Component {
                 title: d.title,
                 description: d.description,
                 photos: d.photos,
-                date: dateFromNow,
+                date: "a",
               },
             }}
           >
@@ -67,7 +69,8 @@ export default class javascriptMap extends Component {
                 </MDBCardText>
                 <MDBCardText>
                   <small className="text-muted">
-                    Postado {dateFromNow} - Hally
+                    Postado {Moment(d.createdAt, "YYYY-MM-DDTHH:mm:ssZ").fromNow()}{" "}
+                    - Hally
                   </small>
                 </MDBCardText>
               </MDBCardBody>

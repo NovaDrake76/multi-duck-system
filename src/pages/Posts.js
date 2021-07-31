@@ -13,7 +13,6 @@ function Posts() {
   return (
     <div className="Posts" >      
       <MDBContainer className="mt-4 ">
-                 {/* {renderPosts()} */}
         <div className="d-flex flex-column align-items-center justify-content-center">
         <Link to = "/resposta">
            <Get />

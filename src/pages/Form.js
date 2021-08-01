@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { useHistory, withRouter } from "react-router-dom";
 
 import {
   MDBContainer,
@@ -18,6 +19,7 @@ export default class FormComponent extends React.Component {
       title: "",
       description: "",
       photos: [],
+      buttonStatus: false,
     };
   }
 
@@ -35,6 +37,7 @@ export default class FormComponent extends React.Component {
 
   postContent(e) {
     e.preventDefault();
+    this.setState({ buttonStatus: true });
     console.log(1, this.state);
     const form = new FormData();
     this.state.photos.forEach((file) => {
@@ -46,7 +49,10 @@ export default class FormComponent extends React.Component {
 
     axios
       .post("https://multi-duck-system-api.herokuapp.com/clues", form)
-      .then((e) => window.alert(e))
+      .then((e) => {
+        window.alert("Enviado, obrigado!");
+        this.setState({ buttonStatus: false });
+      })
       .catch((e) => window.alert(e));
   }
 
@@ -95,7 +101,11 @@ export default class FormComponent extends React.Component {
                   maxfilesize={9400000}
                   onChange={this.fileSelectorHandle.bind(this)}
                 />
-                <MDBBtn className="btn btn-dark mt-3 float-end" type="submit">
+                <MDBBtn
+                  className="btn btn-dark mt-3 float-end"
+                  type="submit"
+                  disabled={this.state.buttonStatus}
+                >
                   Enviar
                 </MDBBtn>
               </MDBCardBody>

@@ -34,7 +34,6 @@ export default class javascriptMap extends Component {
   }
   render() {
     const { data } = this.state;
-    const { buttonStatus } = this.state;
 
     return (
       <>

@@ -1,7 +1,5 @@
 import React from "react";
 import Get from "../components/Get";
-
-// import Pagination from '../components/Pagination';
 import { MDBContainer } from "mdb-react-ui-kit";
 
 function Posts() {

@@ -14,7 +14,7 @@ import {
   MDBCardTitle,
   MDBCardText,
   MDBCardImage,
-  MDBBtn,
+  // MDBBtn,
 } from "mdb-react-ui-kit";
 
 export default class javascriptMap extends Component {

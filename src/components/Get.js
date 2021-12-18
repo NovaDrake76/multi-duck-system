@@ -57,7 +57,7 @@ export default class javascriptMap extends Component {
         {_map(data?.data, (d) => (
           <Link
             to={{
-              pathname: "/resposta",
+              pathname: `/resposta/${d._id}`,
               state: {
                 title: d.title,
                 description: d.description,

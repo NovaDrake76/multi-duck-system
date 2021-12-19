@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
-import Moment from "moment";
 import "moment/locale/pt-br";
-import _map from "lodash/map";
-import { Link, useParams } from "react-router-dom";
 import Loader from "react-loader-spinner";
 
 // import Pagination from "./Pagination";
